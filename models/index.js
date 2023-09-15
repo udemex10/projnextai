@@ -14,7 +14,16 @@ const TaskSchema = new mongoose.Schema({
   gitCommits: [{ type: mongoose.Schema.Types.ObjectId, ref: 'GitCommit' }],
 });
 
-const WidgetSchema = new mongoose.Schema({
+const BoardSchema = new mongoose.Schema({
+  name: String,
+  templateType: String,
+  tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }],
+  // other fields...
+  workspace: { type: mongoose.Schema.Types.ObjectId, ref: 'Workspace' },
+  isProductBacklog: { type: Boolean, default: false },
+});
+
+const ListSchema = new mongoose.Schema({
   name: String,
   templateType: String,
   tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }],
@@ -49,7 +58,6 @@ const UserSchema = new mongoose.Schema({
     enum: ['admin', 'user'],
     default: 'user'
   },
-  subUsers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   workspaces: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Workspace' }],
   organizations: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Organization' }],
   licenses: { type: Number, default: 0 },
@@ -69,7 +77,8 @@ const SprintSchema = new mongoose.Schema({
 // Export the models
 module.exports = {
   Task: mongoose.model('Task', TaskSchema),
-  Widget: mongoose.model('Widget', WidgetSchema),
+  Board: mongoose.model('Widget', BoardSchema),
+  List: mongoose.model('Widget', ListSchema),
   Workspace: mongoose.model('Workspace', WorkspaceSchema),
   Organization: mongoose.model('Organization', OrganizationSchema),
   User: mongoose.model('User', UserSchema),

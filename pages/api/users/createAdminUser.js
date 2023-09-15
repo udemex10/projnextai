@@ -1,3 +1,4 @@
+// pages/api/admin/create.js
 import connectToDatabase from "@/pages/api/dbConnect";
 import { User, Organization, Workspace } from "@/models";
 
@@ -7,18 +8,18 @@ export default async (req, res) => {
   if (req.method === 'POST') {
     const { email, password, organizationName, workspaceName } = req.body;
 
-    // Create a new user
-    const newUser = new User({ email, password, role });
-    await newUser.save();
+    // Create a new admin user
+    const newAdmin = new User({ email, password, role: 'admin' });
+    await newAdmin.save();
 
     // If an organization name was provided, create a new organization
     if (organizationName) {
       const newOrganization = new Organization({ name: organizationName });
       await newOrganization.save();
 
-      // Add the new organization to the user's organizations
-      newUser.organizations.push(newOrganization);
-      await newUser.save();
+      // Add the new organization to the admin's organizations
+      newAdmin.organizations.push(newOrganization);
+      await newAdmin.save();
     }
 
     // If a workspace name was provided, create a new workspace
@@ -26,14 +27,13 @@ export default async (req, res) => {
       const newWorkspace = new Workspace({ name: workspaceName });
       await newWorkspace.save();
 
-      // Add the new workspace to the user's workspaces
-      newUser.workspaces.push(newWorkspace);
-      await newUser.save();
+      // Add the new workspace to the admin's workspaces
+      newAdmin.workspaces.push(newWorkspace);
+      await newAdmin.save();
     }
 
-    res.status(201).json({ message: 'User created successfully', user: newUser });
+    res.status(201).json({ message: 'Admin created successfully', user: newAdmin });
   } else {
-    // Handle other request methods (GET, PUT, DELETE, etc.)
+    res.status(405).json({ message: 'Method not allowed' });
   }
 };
-
