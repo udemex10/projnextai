@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './WorkspaceCard.module.css';
 
 const WorkspaceCard = ({ workspace, onDelete }) => {
   return (
-    <div className={`bg-white shadow-lg rounded-lg p-5 m-5 relative ${styles.card}`}>
+    <div className={`bg-white shadow-lg rounded-lg p-5 m-5 relative`}>
       <button
           onClick={() => onDelete(workspace._id)}
           className="absolute top-2 right-2 text-red-500 hover:text-red-700">
@@ -18,10 +17,10 @@ const WorkspaceCard = ({ workspace, onDelete }) => {
         <span className="text-sm text-gray-500">Org ID: {workspace.organizationId}</span>
       )}
 
-      <Link href={`/workspace/${workspace._id}`}>
-        <a className="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
-          Open Workspace
-        </a>
+      <Link
+    href={`/workspace/${workspace._id}`}
+    className="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+        Open Workspace
       </Link>
     </div>
   );

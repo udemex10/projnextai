@@ -51,9 +51,13 @@ function LoginPage() {
         </button>
         <p className="text-center">
           Don't have an account?{" "}
-          <Link href="/register">
-            <a className="text-blue-500">Sign up</a>
+          <Link
+                href="/register"
+                className="text-blue-500"
+          >
+              Sign up
           </Link>
+
         </p>
       </form>
     </div>

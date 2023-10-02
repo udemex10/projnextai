@@ -93,11 +93,13 @@ function RegisterPage() {
         >
           Sign Up
         </button>
-        <Link href="/login">
-          <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+        <Link
+            href="/login"
+            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+        >
             Already have an account?
-          </a>
         </Link>
+
       </div>
       {error && <p className="text-red-500 text-xs italic mt-4">{error}</p>}
     </form>
