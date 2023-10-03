@@ -4,12 +4,12 @@ import Roadmap from '../../components/roadmapComponent';
 import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
 import Sprintboard from '../../components/sprintBoardcomponent';
+import Toolbar from '../../components/Toolbar';
 
 function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
-  const [activeView, setActiveView] = useState(''); // Will hold values like 'roadmap', 'backlog', etc.
+  const [activeView, setActiveView] = useState('');
 
-  // Function to determine which component to render based on activeView
   const renderActiveView = () => {
     switch (activeView) {
       case 'roadmap':
@@ -30,35 +30,38 @@ function WorkspaceId({ allWorkspaces }) {
   };
 
   return (
-    <div className="flex h-screen">
-      <Sidebar workspaces={allWorkspaces} setActiveView={setActiveView} />
-
-      <main className="flex-1 p-8 overflow-y-scroll">
-        {selectedWorkspace ? (
-          <div>
-            <h1 className="text-3xl mb-4">{selectedWorkspace.name}</h1>
-            {renderActiveView()}
-          </div>
-        ) : renderActiveView()}
-      </main>
+    <div className="flex flex-col h-screen bg-dark-main text-dark-main">
+      <Toolbar
+        title="Vojo"
+        links={[
+          {name: 'Tools', href: '#'},
+          {name: 'Projects', href: '#'},
+          {name: 'Create', href: '#'}
+        ]}
+      />
+      <div className="flex flex-grow">
+        <Sidebar workspaces={allWorkspaces} setActiveView={setActiveView} />
+        <main className="flex-1 p-8 overflow-y-scroll text-white">
+          {selectedWorkspace ? (
+            <div>
+              <h1 className="text-3xl mb-4">{selectedWorkspace.name}</h1>
+              {renderActiveView()}
+            </div>
+          ) : renderActiveView()}
+        </main>
+      </div>
     </div>
   );
 }
 
-// Mock export for the sake of this example, in Next.js you'd use getServerSideProps or getStaticProps.
 export async function getServerSideProps() {
-  // Fetch the list of workspaces from your backend.
-  // const response = await fetch('/api/workspaces');
-  // const allWorkspaces = await response.json();
-
-  // For this mock example:
   const allWorkspaces = [
     { _id: '1', name: 'Workspace 1', description: 'Description 1' },
-    { _id: '2', name: 'Workspace 2', description: 'Description 2' },
+    { _id: '2', name: 'Workspace 2', description: 'Description 2' }
   ];
 
   return {
-    props: { allWorkspaces },
+    props: { allWorkspaces }
   };
 }
 

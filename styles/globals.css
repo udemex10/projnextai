@@ -11,3 +11,33 @@ body {
 .vojo-logo {
     font-family: 'Orbitron', sans-serif;
 }
+
+/* Base styles.css or tailwind.css */
+
+/* Main dark theme */
+.bg-dark-main {
+  background-color: #121212;
+}
+
+.text-dark-main {
+  color: #EAEAEA;
+}
+
+/* Slightly lighter dark shade for toolbar */
+.bg-dark-shade {
+  background-color: #1E1E1E;
+}
+
+.text-dark-shade {
+  color: #D0D0D0;
+}
+
+/* Even lighter shade for sidebar */
+.bg-dark-lighter {
+  background-color: #2A2A2A;
+}
+
+.text-dark-lighter {
+  color: #BBBBBB;
+}
+
