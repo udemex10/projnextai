@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Roadmap from '../components/roadmapComponent';
-import Backlog from '../components/backlogcomponent';
-import Taskboard from '../components/boardComponent';
-import Sprintboard from '../components/sprintBoardcomponent';
+import Sidebar from '../../components/SIdebar';
+import Roadmap from '../../components/roadmapComponent';
+import Backlog from '../../components/backlogcomponent';
+import Taskboard from '../../components/TaskBoard';
+import Sprintboard from '../../components/sprintBoardcomponent';
 
-function WorkspaceArea({ allWorkspaces }) {
+function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
   const [activeView, setActiveView] = useState(''); // Will hold values like 'roadmap', 'backlog', etc.
 
@@ -62,4 +62,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default WorkspaceArea;
+export default WorkspaceId;

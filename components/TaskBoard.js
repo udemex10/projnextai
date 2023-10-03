@@ -1,8 +1,6 @@
-// taskboard.js
-
 import React from 'react';
 
-function boardComponent({ tasks, currentUser }) {
+function TaskBoard({ tasks = [], currentUser = "" }) {
   // Filter tasks based on their status and assignee
   const doingTasks = tasks.filter(task => task.status === 'working on' && task.assignee === currentUser);
   const doneTasks = tasks.filter(task => task.status === 'done' && task.assignee === currentUser);
@@ -38,4 +36,5 @@ function boardComponent({ tasks, currentUser }) {
   );
 }
 
-export default boardComponent();
+export default TaskBoard;
+
