@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Sidebar from '../../components/SIdebar';
+import Sidebar from '../../components/Sidebar';
 import Roadmap from '../../components/roadmapComponent';
 import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
@@ -30,7 +30,7 @@ function WorkspaceId({ allWorkspaces }) {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-dark-main text-dark-main">
+    <div className="flex flex-col h-screen text-white bg-gray-900">
       <Toolbar
         title="Vojo"
         links={[

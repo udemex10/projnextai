@@ -14,30 +14,22 @@ body {
 
 /* Base styles.css or tailwind.css */
 
-/* Main dark theme */
-.bg-dark-main {
-  background-color: #121212;
+.bg-base-color {
+  background-color: #3F8597;
 }
 
-.text-dark-main {
-  color: #EAEAEA;
+.bg-lighter-shade {
+  background-color: #669FAE;
 }
 
-/* Slightly lighter dark shade for toolbar */
-.bg-dark-shade {
-  background-color: #1E1E1E;
+.bg-darker-shade {
+  background-color: #2C6B81;
 }
 
-.text-dark-shade {
-  color: #D0D0D0;
+.bg-gray-950 {
+  background-color: #0B0B0B;
 }
 
-/* Even lighter shade for sidebar */
-.bg-dark-lighter {
-  background-color: #2A2A2A;
+.bg-custom-dark {
+  background-color: #121824;
 }
-
-.text-dark-lighter {
-  color: #BBBBBB;
-}
-

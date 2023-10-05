@@ -1,6 +1,6 @@
 function Sidebar({ setActiveView }) {
   return (
-    <aside className="w-64 border-r border-gray-700 bg-dark-lighter text-dark-lighter p-4 text-white">
+    <aside className="w-64 border-r border-gray-700 bg-gray-800 text-white p-4">
       <button className="text-blue-500 mb-4">
         <i className="fas fa-plus"></i> {/* Assuming you are using FontAwesome */}
       </button>

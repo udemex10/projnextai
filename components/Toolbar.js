@@ -2,9 +2,9 @@ import React from 'react';
 
 function Toolbar({ title = "Vojo", links = [] }) {
   return (
-    <div className="bg-dark-shade p-4 flex items-center">
-      <h1 className="text-xl font-bold text-white mr-4">{title}</h1>
-      <div className="space-x-4">
+    <div className="bg-custom-dark p-6 flex items-center">
+      <h1 className="text-2xl font-bold text-white mr-6">{title}</h1>
+      <div className="space-x-5">
         {links.map(link => (
           <a
             key={link.name}

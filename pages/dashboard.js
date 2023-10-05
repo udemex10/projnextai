@@ -1,6 +1,7 @@
 import React from 'react';
 import WorkspaceCard from '../components/WorkspaceCard';
 import AddWorkspaceCard from '../components/AddWorkspaceCard';
+import Toolbar from '../components/Toolbar';
 
 const mockWorkspaces = [
   { _id: '1', name: 'Workspace 1', description: 'This is workspace 1' },
@@ -9,16 +10,17 @@ const mockWorkspaces = [
 
 const Dashboard = ({ handleDelete }) => {
   return (
-    <div className="p-8 bg-gray-900 text-white h-screen">
-      <div className="flex justify-start items-center mb-6">
-        <h1 className="text-5xl font-extrabold mr-10 vojo-logo">Vojo</h1>
-        <div className="space-x-4">
-            <a href="#" className="hover:underline transition duration-300 ease-in-out transform hover:scale-105">Tools</a>
-            <a href="#" className="hover:underline transition duration-300 ease-in-out transform hover:scale-105">Filters</a>
-            <a href="#" className="hover:underline transition duration-300 ease-in-out transform hover:scale-105">Themes</a>
-        </div>
-      </div>
-      <div className="flex flex-wrap space-x-8">
+    <div className="pt-0 pl-8 pr-8 pb-8 bg-gray-900 text-white h-screen">
+      <Toolbar
+        title="Vojo"
+        links={[
+          {name: 'Tools', href: '#'},
+          {name: 'Filters', href: '#'},
+          {name: 'Themes', href: '#'}
+        ]}
+      />
+
+      <div className="flex flex-wrap space-x-8 mt-6">
         {mockWorkspaces.map(workspace => (
           <WorkspaceCard key={workspace._id} workspace={workspace} onDelete={handleDelete} />
         ))}
