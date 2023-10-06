@@ -10,7 +10,7 @@ const mockWorkspaces = [
 
 const Dashboard = ({ handleDelete }) => {
   return (
-    <div className="pt-0 pl-8 pr-8 pb-8 bg-gray-900 text-white h-screen">
+    <div className="flex flex-col pb-8 bg-gray-900 text-white h-screen w-full">
       <Toolbar
         title="Vojo"
         links={[
@@ -20,7 +20,7 @@ const Dashboard = ({ handleDelete }) => {
         ]}
       />
 
-      <div className="flex flex-wrap space-x-8 mt-6">
+      <div className="pl-8 pr-8 flex flex-wrap space-x-8 mt-6">
         {mockWorkspaces.map(workspace => (
           <WorkspaceCard key={workspace._id} workspace={workspace} onDelete={handleDelete} />
         ))}

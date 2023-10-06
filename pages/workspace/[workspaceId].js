@@ -3,7 +3,7 @@ import Sidebar from '../../components/Sidebar';
 import Roadmap from '../../components/roadmapComponent';
 import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
-import Sprintboard from '../../components/sprintBoardcomponent';
+import Sprintboard from '../../components/Milestones';
 import Toolbar from '../../components/Toolbar';
 
 function WorkspaceId({ allWorkspaces }) {

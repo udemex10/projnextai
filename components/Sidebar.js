@@ -22,8 +22,8 @@ function Sidebar({ setActiveView }) {
           </button>
         </li>
         <li className="mb-2">
-          <button onClick={() => setActiveView('sprint board')} className="block py-1 hover:text-blue-500 transition-transform duration-300 ease-in-out transform hover:scale-105">
-            Sprint
+          <button onClick={() => setActiveView('Milestones')} className="block py-1 hover:text-blue-500 transition-transform duration-300 ease-in-out transform hover:scale-105">
+            Milestones
           </button>
         </li>
       </ul>

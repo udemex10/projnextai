@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Toolbar({ title = "Vojo", links = [] }) {
+function Toolbar({ links = [] }) {
   return (
-    <div className="bg-custom-dark p-6 flex items-center">
-      <h1 className="text-2xl font-bold text-white mr-6">{title}</h1>
+    <div className="bg-custom-dark p-6 flex items-center border-b border-gray-800 shadow-md">
+      <img src="/Vojo_Logo.png" alt="Logo" className="h-10 mr-6" />
       <div className="space-x-5">
         {links.map(link => (
           <a
