@@ -5,6 +5,7 @@ import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
 import Sprintboard from '../../components/Milestones';
 import Toolbar from '../../components/Toolbar';
+import WebCAD from '../../components/WebCAD';
 
 function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -20,6 +21,8 @@ function WorkspaceId({ allWorkspaces }) {
         return <Taskboard />;
       case 'sprint board':
         return <Sprintboard />;
+       case 'cadtools':
+         return <WebCAD />;
       default:
         return (
           <div className="flex items-center justify-center h-full">
