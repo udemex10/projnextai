@@ -3,7 +3,7 @@ import Sidebar from '../../components/Sidebar';
 import Roadmap from '../../components/roadmapComponent';
 import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
-import Sprintboard from '../../components/Milestones';
+import KanbanBoard from '../../components/KanbanBoard';
 import Toolbar from '../../components/Toolbar';
 
 function WorkspaceId({ allWorkspaces }) {
@@ -19,13 +19,16 @@ function WorkspaceId({ allWorkspaces }) {
       case 'board':
         return <Taskboard />;
       case 'sprint board':
-        return <Sprintboard />;
+        return <KanbanBoard />;
       default:
-        return (
+        return <KanbanBoard />;
+        
+        /*return (
           <div className="flex items-center justify-center h-full">
             <p className="text-xl">Select a workspace or view to see its content.</p>
           </div>
         );
+        /**/
     }
   };
 
