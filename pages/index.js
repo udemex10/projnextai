@@ -5,7 +5,8 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace('/dashboard');
+    //router.replace('./Dashboard');
+    router.replace('./ProjectspaceDashboard');
   }, []);
 
   return null;
