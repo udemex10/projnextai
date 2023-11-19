@@ -26,6 +26,11 @@ function Sidebar({ setActiveView }) {
             Milestones
           </button>
         </li>
+        <li className="mb-2">
+           <button onClick={() => setActiveView('cadtools')} className="block py-1 hover:text-blue-500 transition-transform duration-300 ease-in-out transform hover:scale-105">
+               CAD tools
+           </button>
+        </li>
       </ul>
     </aside>
   );

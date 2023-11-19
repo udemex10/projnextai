@@ -5,6 +5,7 @@ import Backlog from '../../components/backlogcomponent';
 import Taskboard from '../../components/TaskBoard';
 import KanbanBoard from '../../components/KanbanBoard';
 import Toolbar from '../../components/Toolbar';
+import WebCAD from '../../components/WebCAD';
 
 function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -20,6 +21,8 @@ function WorkspaceId({ allWorkspaces }) {
         return <Taskboard />;
       case 'sprint board':
         return <KanbanBoard />;
+      case 'cadtools':
+        return <WebCAD />;
       default:
         return <KanbanBoard />;
         
