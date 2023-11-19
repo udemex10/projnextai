@@ -1,4 +1,5 @@
 import React from 'react'
+//import { Draggable } from 'react-beautiful-dnd/esm';
 import { Draggable } from 'react-beautiful-dnd';
 import styled from "styled-components";
 
@@ -47,7 +48,6 @@ export default function Task({ task, index }) {
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            //ref={provided.innerRef}
             isDragging={snapshot.isDragging}
           >
 

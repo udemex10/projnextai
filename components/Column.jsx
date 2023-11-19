@@ -1,4 +1,5 @@
 import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
 import styled from "styled-components";
 //import "./scroll.css";
@@ -48,13 +49,23 @@ export default function Column({ title, tasks, id }) {
             <TaskList
               ref={provided.innerRef}
               {...provided.droppableProps}
-              isDragingOver={snapshot.isDraggingOver}
+              isDraggingOver={snapshot.isDraggingOver}
             >
-              {/* Provide Your Tasks */}
-              {tasks.map((task, index) => (
-                <Task key={index} index={index} task={task} />
-              ))}
-              {provided.placeholder}
+                
+                {/* Provide Your Tasks */}
+                {tasks.map((task, index) => (
+                    <Draggable draggableId={task.id} index={index} key={task.id}>
+                        {(provided, snapshot) => (
+                        <Task
+                            provided={provided}
+                            snapshot={snapshot}
+                            task={task}
+                            index={index}
+                        />
+                        )}
+                    </Draggable>
+                ))}
+                {provided.placeholder}
             </TaskList>
           );
         }}

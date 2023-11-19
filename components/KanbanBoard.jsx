@@ -1,3 +1,77 @@
+import React, { useState, useEffect } from 'react';
+import { DragDropContext } from 'react-beautiful-dnd';
+import Column from './Column';
+
+export default function KanbanBoard() {
+  const [completed, setCompleted] = useState([]);
+  const [incompleted, setIncompleted] = useState([]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then((response) => response.json())
+      .then((json) => {
+        setCompleted(json.filter((task) => task.completed));
+        setIncompleted(json.filter((task) => !task.completed));
+      });
+  }, []);
+
+  const handleDragEnd = (result) => {
+    const { destination, source, draggableId } = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    if (source.droppableId === '2') {
+      setCompleted((prevCompleted) => {
+        const newCompleted = Array.from(prevCompleted);
+        const [removedTask] = newCompleted.splice(source.index, 1);
+        newCompleted.splice(destination.index, 0, removedTask);
+        return newCompleted;
+      });
+    } else {
+      setIncompleted((prevIncompleted) => {
+        const newIncompleted = Array.from(prevIncompleted);
+        const [removedTask] = newIncompleted.splice(source.index, 1);
+        newIncompleted.splice(destination.index, 0, removedTask);
+        return newIncompleted;
+      });
+    }
+  };
+
+  return (
+    <DragDropContext onDragEnd={handleDragEnd}>
+      <h2 style={{ textAlign: 'center' }}>Progress Board</h2>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: 'row',
+        }}
+      >
+        <Column title={'TO DO'} tasks={incompleted} id={'1'} />
+        <Column title={'DONE'} tasks={completed} id={'2'} />
+        <Column title={'BACKLOG'} tasks={[]} id={'3'} />
+      </div>
+    </DragDropContext>
+  );
+}
+
+
+
+
+
+
+/*
 import React, { useState, useEffect } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import Column from './Column';
@@ -45,7 +119,7 @@ export default function KanbanBoard(){
 
 
     }
-    /**/
+    /** /
 
 
     let handleDragEnd = result => {
@@ -122,3 +196,4 @@ export default function KanbanBoard(){
         </DragDropContext>
     )
 }
+/**/
