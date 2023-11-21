@@ -2,7 +2,6 @@ import React from 'react';
 import WorkspaceCard from '../components/WorkspaceCard';
 import AddWorkspaceCard from '../components/AddWorkspaceCard';
 import Toolbar from '../components/Toolbar';
-import HelpPrompt from '../components/HelpPrompt';
 
 const mockWorkspaces = [
   { _id: '1', name: 'Workspace 1', description: 'This is workspace 1' },

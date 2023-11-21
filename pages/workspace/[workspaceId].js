@@ -6,6 +6,8 @@ import Taskboard from '../../components/TaskBoard';
 import Sprintboard from '../../components/Milestones';
 import Toolbar from '../../components/Toolbar';
 import WebCAD from '../../components/WebCAD';
+import HelpPrompt from '../../components/HelpPrompt'; /*update header here from dashboard*/
+
 
 function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -32,6 +34,7 @@ function WorkspaceId({ allWorkspaces }) {
     }
   };
 
+
   return (
     <div className="flex flex-col h-screen text-white bg-gray-900">
       <Toolbar
@@ -53,6 +56,7 @@ function WorkspaceId({ allWorkspaces }) {
           ) : renderActiveView()}
         </main>
       </div>
+      <HelpPrompt /> {/*here is the insertion of help prompt*/}
     </div>
   );
 }
