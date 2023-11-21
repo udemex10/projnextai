@@ -6,7 +6,8 @@ import Taskboard from '../../components/TaskBoard';
 import KanbanBoard from '../../components/KanbanBoard';
 import Toolbar from '../../components/Toolbar';
 import WebCAD from '../../components/WebCAD';
-import HelpPrompt from '../../components/HelpPrompt'; /*update header here from dashboard*/
+import HelpPrompt from '../../components/HelpPrompt';
+import Milestones from "@/components/Milestones"; /*update header here from dashboard*/
 
 
 function WorkspaceId({ allWorkspaces }) {
@@ -20,20 +21,18 @@ function WorkspaceId({ allWorkspaces }) {
       case 'backlog':
         return <Backlog />;
       case 'board':
-        return <Taskboard />;
-      case 'sprint board':
         return <KanbanBoard />;
+      case 'Milestones':
+        return <Milestones />;
       case 'cadtools':
         return <WebCAD />;
       default:
-        return <KanbanBoard />;
-        
-        /*return (
+        return (
           <div className="flex items-center justify-center h-full">
             <p className="text-xl">Select a workspace or view to see its content.</p>
           </div>
         );
-        /**/
+
     }
   };
 
