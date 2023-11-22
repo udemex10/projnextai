@@ -20,7 +20,7 @@ function HelpPrompt() {
       <div className="fixed bottom-5 right-5 bg-blue-700 text-white p-4 rounded-lg shadow-lg z-50">
         <div className="text-lg mb-2">Ask a Question</div>
         <textarea
-          className="w-full p-2 border border-gray-300 rounded mb-2"
+          className="w-full p-2 border border-gray-300 rounded mb-2" 
           placeholder="Enter your question here..."
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
