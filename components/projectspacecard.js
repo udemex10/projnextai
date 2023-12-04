@@ -4,7 +4,7 @@ import Link from 'next/link';
 const ProjectspaceCard = ({ projectspace, onDelete }) => { 
   return (
     <Link href={`/projectspace/${projectspace._id}`}>
-      <div className="bg-gray-700 w-60 h-80 p-5 rounded-lg shadow-md hover:shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 relative block cursor-pointer">
+      <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '1000px' }} className="bg-gray-700 h-30 pr-5 pt-5 pb-5 rounded-lg shadow-md hover:shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 mx-auto mb-4 cursor-pointer">
         <button
           onClick={(e) => {
             e.stopPropagation();

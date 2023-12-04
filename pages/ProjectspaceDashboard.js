@@ -36,7 +36,7 @@ const ProjectspaceDashboard = ({ handleDelete }) => {
         ]}
       />
 
-      <div className="pl-8 pr-8 flex flex-wrap space-x-8 mt-6">
+      <div className="pl-8 flex flex-wrap mt-6">
         {mockProjectspaces.map(projectspace => (
           <ProjectspaceCard key={projectspace._id} projectspace={projectspace} onDelete={handleDelete} />
         ))}
