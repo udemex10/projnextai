@@ -1,6 +1,8 @@
 // help prompt
 
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 function HelpPrompt() {
   const [question, setQuestion] = useState('');
@@ -17,20 +19,24 @@ function HelpPrompt() {
 
   return (
     isPromptVisible && (
-      <div className="fixed bottom-5 right-5 bg-blue-700 text-white p-4 rounded-lg shadow-lg z-50">
-        <div className="text-lg mb-2">Ask a Question</div>
-        <textarea
-          className="w-full p-2 border border-gray-300 rounded mb-2" 
-          placeholder="Enter your question here..."
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-        />
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow"
-          onClick={handleQuestionSubmit}
-        >
-          Submit
-        </button>
+      <div className="fixed bottom-5 right-5 bg-gray-800 text-white p-6 rounded-3xl shadow-2xl border border-gray-600 z-50 w-1/4 min-w-max">
+        <div className="text-lg mb-4 font-semibold">What can I help you with?</div>
+        <div className="flex">
+          <textarea
+            className="flex-grow p-3 border border-gray-500 rounded-l-3xl resize-none bg-gray-700"
+            placeholder="Enter your question here..."
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            rows={1}
+            style={{ minHeight: '44px' }}
+          />
+          <button
+            className="bg-gray-700 hover:bg-gray-600 text-white px-4 rounded-r-3xl shadow flex items-center"
+            onClick={handleQuestionSubmit}
+          >
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
+        </div>
       </div>
     )
   );

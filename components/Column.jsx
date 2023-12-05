@@ -2,7 +2,6 @@ import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { Droppable } from 'react-beautiful-dnd';
 import styled from "styled-components";
-//import "./scroll.css";
 import Task from './Task';
 
 const Container = styled.div`
