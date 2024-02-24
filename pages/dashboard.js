@@ -1,5 +1,5 @@
 import React from 'react';
-import WorkspaceCard from '../components/WorkspaceCard';
+import WorkspaceCard from '../components/workspacecard';
 import AddWorkspaceCard from '../components/AddWorkspaceCard';
 import Toolbar from '../components/Toolbar';
 
