@@ -8,7 +8,7 @@ import Toolbar from '../../components/Toolbar';
 import WebCAD from '../../components/WebCAD';
 import HelpPrompt from '../../components/HelpPrompt';
 import Milestones from "@/components/Milestones"; /*update header here from dashboard*/
-
+import PlmUI from '../../components/PlmUI';
 
 function WorkspaceId({ allWorkspaces }) {
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -26,6 +26,8 @@ function WorkspaceId({ allWorkspaces }) {
         return <Milestones />;
       case 'cadtools':
         return <WebCAD />;
+      case 'PLM':
+        return <PlmUI />;
       default:
         return (
           <div className="flex items-center justify-center h-full">

@@ -30,7 +30,7 @@ function Sidebar({ setActiveView }) {
           </button>
           {openDropdown && <DropdownMenu />}
         </li>
-        {['roadmap', 'backlog', 'board', 'Milestones', 'cadtools'].map((view, index) => (
+        {['roadmap', 'backlog', 'board', 'Milestones', 'cadtools', 'PLM'].map((view, index) => (
           <li className="mb-2" key={index}>
             <button
               onClick={() => setActiveView(view)}
